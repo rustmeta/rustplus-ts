@@ -4,11 +4,12 @@
   "description": "Unofficial NodeJS library for controlling Smart Switches in the PC game Rust",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liamcottle/rustplus.js.git"
+    "url": "git+https://github.com/rustmeta/rustplus-ts.git"
   },
   "keywords": [
     "rust",
@@ -22,12 +23,12 @@
     "smart alarm",
     "team chat"
   ],
-  "author": "Liam Cottle",
+  "author": "Philip Oliver",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liamcottle/rustplus.js/issues"
+    "url": "https://github.com/rustmeta/rustplus-ts/issues"
   },
-  "homepage": "https://github.com/liamcottle/rustplus.js#readme",
+  "homepage": "https://github.com/rustmeta/rustplus-ts#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "chrome-launcher": "^0.13.4",
