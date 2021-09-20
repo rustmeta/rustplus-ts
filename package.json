@@ -1,6 +1,6 @@
 {
   "name": "@rustmeta/rustplus-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Unofficial NodeJS library for controlling Smart Switches in the PC game Rust",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
