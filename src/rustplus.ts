@@ -26,7 +26,7 @@ export class RustPlus extends EventEmitter {
    */
   constructor(
     private readonly server: string,
-    private readonly port: string,
+    private readonly port: number,
     private readonly playerId: string,
     private readonly playerToken: number,
     private readonly useFacepunchProxy = false
@@ -63,7 +63,6 @@ export class RustPlus extends EventEmitter {
 
       this.websocket.on('message', (data) => {
         const message = AppMessage.fromBinary(data as any)
-        console.info(message)
         // check if received message is a response and if we have a callback registered for it
         if (
           message.response &&

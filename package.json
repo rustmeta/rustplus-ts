@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Unofficial NodeJS library for controlling Smart Switches in the PC game Rust",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run build"
