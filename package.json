@@ -1,10 +1,10 @@
 {
-  "name": "@liamcottle/rustplus.js",
-  "version": "2.2.0",
+  "name": "@rustmeta/rustplus-ts",
+  "version": "1.0.0",
   "description": "Unofficial NodeJS library for controlling Smart Switches in the PC game Rust",
-  "main": "rustplus.js",
-  "bin": {
-    "rustplus": "./cli/index.js"
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -34,9 +34,16 @@
     "command-line-args": "^5.1.1",
     "command-line-usage": "^6.1.1",
     "express": "^4.17.1",
-    "protobufjs": "^6.9.0",
     "push-receiver": "^2.1.0",
     "uuid": "^8.1.0",
     "ws": "^7.3.0"
+  },
+  "devDependencies": {
+    "@protobuf-ts/plugin": "^2.0.6",
+    "@types/node": "^16.9.4",
+    "@types/ws": "^7.4.7",
+    "prettier": "^2.4.1",
+    "protoc": "^1.0.4",
+    "typescript": "^4.4.3"
   }
 }

@@ -11,7 +11,7 @@ message AppMessage {
 message AppRequest {
 
 	required uint32 seq = 1;
-	required uint64 playerId = 2;
+	required uint64 playerId = 2 [jstype = JS_STRING];
 	required int32 playerToken = 3;
 
 	optional uint32 entityId = 4;
