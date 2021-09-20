@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/rustmeta/rustplus-ts#readme",
   "dependencies": {
+    "@protobuf-ts/plugin": "^2.0.6",
     "axios": "^0.21.1",
     "chrome-launcher": "^0.13.4",
     "command-line-args": "^5.1.1",
@@ -42,7 +43,6 @@
     "ws": "^7.3.0"
   },
   "devDependencies": {
-    "@protobuf-ts/plugin": "^2.0.6",
     "@types/node": "^16.9.4",
     "@types/ws": "^7.4.7",
     "prettier": "^2.4.1",
