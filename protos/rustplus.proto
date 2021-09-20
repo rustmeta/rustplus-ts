@@ -45,7 +45,7 @@ message AppCameraFrameRequest {
 }
 
 message AppPromoteToLeader {
-	required uint64 steamId = 1;
+	required uint64 steamId = 1 [jstype = JS_STRING];
 }
 
 message AppResponse {
@@ -122,13 +122,13 @@ message AppMap {
 
 message AppTeamInfo {
 
-	required uint64 leaderSteamId = 1;
+	required uint64 leaderSteamId = 1 [jstype = JS_STRING];
 	repeated AppTeamInfo.Member members = 2;
 	repeated AppTeamInfo.Note mapNotes = 3;
 	repeated AppTeamInfo.Note leaderMapNotes = 4;
 
 	message Member {
-		required uint64 steamId = 1;
+		required uint64 steamId = 1 [jstype = JS_STRING];
 		required string name = 2;
 		required float x = 3;
 		required float y = 4;
@@ -151,7 +151,7 @@ message AppTeamChat {
 }
 
 message AppChatMessage {
-	required uint64 steamId = 1;
+	required uint64 steamId = 1 [jstype = JS_STRING];
 	required string name = 2;
 	required string message = 3;
 	required string color = 4;
@@ -206,7 +206,7 @@ message AppMarker {
 	required AppMarkerType type = 2;
 	required float x = 3;
 	required float y = 4;
-	optional uint64 steamId = 5;
+	optional uint64 steamId = 5 [jstype = JS_STRING];
 	optional float rotation = 6;
 	optional float radius = 7;
 	optional Vector4 color1 = 8;
@@ -244,7 +244,7 @@ message AppCameraFrame {
 
 
 message AppTeamChanged {
-	required uint64 playerId = 1;
+	required uint64 playerId = 1 [jstype = JS_STRING];
 	required AppTeamInfo teamInfo = 2;
 }
 
