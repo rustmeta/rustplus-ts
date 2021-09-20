@@ -135,9 +135,9 @@ export interface AppCameraFrameRequest {
  */
 export interface AppPromoteToLeader {
     /**
-     * @generated from protobuf field: uint64 steamId = 1;
+     * @generated from protobuf field: uint64 steamId = 1 [jstype = JS_STRING];
      */
-    steamId: bigint;
+    steamId: string;
 }
 /**
  * @generated from protobuf message rustplus.AppResponse
@@ -353,9 +353,9 @@ export interface AppMap_Monument {
  */
 export interface AppTeamInfo {
     /**
-     * @generated from protobuf field: uint64 leaderSteamId = 1;
+     * @generated from protobuf field: uint64 leaderSteamId = 1 [jstype = JS_STRING];
      */
-    leaderSteamId: bigint;
+    leaderSteamId: string;
     /**
      * @generated from protobuf field: repeated rustplus.AppTeamInfo.Member members = 2;
      */
@@ -374,9 +374,9 @@ export interface AppTeamInfo {
  */
 export interface AppTeamInfo_Member {
     /**
-     * @generated from protobuf field: uint64 steamId = 1;
+     * @generated from protobuf field: uint64 steamId = 1 [jstype = JS_STRING];
      */
-    steamId: bigint;
+    steamId: string;
     /**
      * @generated from protobuf field: string name = 2;
      */
@@ -437,9 +437,9 @@ export interface AppTeamChat {
  */
 export interface AppChatMessage {
     /**
-     * @generated from protobuf field: uint64 steamId = 1;
+     * @generated from protobuf field: uint64 steamId = 1 [jstype = JS_STRING];
      */
-    steamId: bigint;
+    steamId: string;
     /**
      * @generated from protobuf field: string name = 2;
      */
@@ -572,9 +572,9 @@ export interface AppMarker {
      */
     y: number;
     /**
-     * @generated from protobuf field: optional uint64 steamId = 5;
+     * @generated from protobuf field: optional uint64 steamId = 5 [jstype = JS_STRING];
      */
-    steamId?: bigint;
+    steamId?: string;
     /**
      * @generated from protobuf field: optional float rotation = 6;
      */
@@ -655,9 +655,9 @@ export interface AppCameraFrame {
  */
 export interface AppTeamChanged {
     /**
-     * @generated from protobuf field: uint64 playerId = 1;
+     * @generated from protobuf field: uint64 playerId = 1 [jstype = JS_STRING];
      */
-    playerId: bigint;
+    playerId: string;
     /**
      * @generated from protobuf field: rustplus.AppTeamInfo teamInfo = 2;
      */
@@ -1108,11 +1108,11 @@ export const AppCameraFrameRequest = new AppCameraFrameRequest$Type();
 class AppPromoteToLeader$Type extends MessageType<AppPromoteToLeader> {
     constructor() {
         super("rustplus.AppPromoteToLeader", [
-            { no: 1, name: "steamId", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 1, name: "steamId", kind: "scalar", T: 4 /*ScalarType.UINT64*/ }
         ]);
     }
     create(value?: PartialMessage<AppPromoteToLeader>): AppPromoteToLeader {
-        const message = { steamId: 0n };
+        const message = { steamId: "0" };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<AppPromoteToLeader>(this, message, value);
@@ -1123,8 +1123,8 @@ class AppPromoteToLeader$Type extends MessageType<AppPromoteToLeader> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* uint64 steamId */ 1:
-                    message.steamId = reader.uint64().toBigInt();
+                case /* uint64 steamId = 1 [jstype = JS_STRING];*/ 1:
+                    message.steamId = reader.uint64().toString();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1138,8 +1138,8 @@ class AppPromoteToLeader$Type extends MessageType<AppPromoteToLeader> {
         return message;
     }
     internalBinaryWrite(message: AppPromoteToLeader, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* uint64 steamId = 1; */
-        if (message.steamId !== 0n)
+        /* uint64 steamId = 1 [jstype = JS_STRING]; */
+        if (message.steamId !== "0")
             writer.tag(1, WireType.Varint).uint64(message.steamId);
         let u = options.writeUnknownFields;
         if (u !== false)
@@ -1774,14 +1774,14 @@ export const AppMap_Monument = new AppMap_Monument$Type();
 class AppTeamInfo$Type extends MessageType<AppTeamInfo> {
     constructor() {
         super("rustplus.AppTeamInfo", [
-            { no: 1, name: "leaderSteamId", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 1, name: "leaderSteamId", kind: "scalar", T: 4 /*ScalarType.UINT64*/ },
             { no: 2, name: "members", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => AppTeamInfo_Member },
             { no: 3, name: "mapNotes", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => AppTeamInfo_Note },
             { no: 4, name: "leaderMapNotes", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => AppTeamInfo_Note }
         ]);
     }
     create(value?: PartialMessage<AppTeamInfo>): AppTeamInfo {
-        const message = { leaderSteamId: 0n, members: [], mapNotes: [], leaderMapNotes: [] };
+        const message = { leaderSteamId: "0", members: [], mapNotes: [], leaderMapNotes: [] };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<AppTeamInfo>(this, message, value);
@@ -1792,8 +1792,8 @@ class AppTeamInfo$Type extends MessageType<AppTeamInfo> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* uint64 leaderSteamId */ 1:
-                    message.leaderSteamId = reader.uint64().toBigInt();
+                case /* uint64 leaderSteamId = 1 [jstype = JS_STRING];*/ 1:
+                    message.leaderSteamId = reader.uint64().toString();
                     break;
                 case /* repeated rustplus.AppTeamInfo.Member members */ 2:
                     message.members.push(AppTeamInfo_Member.internalBinaryRead(reader, reader.uint32(), options));
@@ -1816,8 +1816,8 @@ class AppTeamInfo$Type extends MessageType<AppTeamInfo> {
         return message;
     }
     internalBinaryWrite(message: AppTeamInfo, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* uint64 leaderSteamId = 1; */
-        if (message.leaderSteamId !== 0n)
+        /* uint64 leaderSteamId = 1 [jstype = JS_STRING]; */
+        if (message.leaderSteamId !== "0")
             writer.tag(1, WireType.Varint).uint64(message.leaderSteamId);
         /* repeated rustplus.AppTeamInfo.Member members = 2; */
         for (let i = 0; i < message.members.length; i++)
@@ -1842,7 +1842,7 @@ export const AppTeamInfo = new AppTeamInfo$Type();
 class AppTeamInfo_Member$Type extends MessageType<AppTeamInfo_Member> {
     constructor() {
         super("rustplus.AppTeamInfo.Member", [
-            { no: 1, name: "steamId", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 1, name: "steamId", kind: "scalar", T: 4 /*ScalarType.UINT64*/ },
             { no: 2, name: "name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "x", kind: "scalar", T: 2 /*ScalarType.FLOAT*/ },
             { no: 4, name: "y", kind: "scalar", T: 2 /*ScalarType.FLOAT*/ },
@@ -1853,7 +1853,7 @@ class AppTeamInfo_Member$Type extends MessageType<AppTeamInfo_Member> {
         ]);
     }
     create(value?: PartialMessage<AppTeamInfo_Member>): AppTeamInfo_Member {
-        const message = { steamId: 0n, name: "", x: 0, y: 0, isOnline: false, spawnTime: 0, isAlive: false, deathTime: 0 };
+        const message = { steamId: "0", name: "", x: 0, y: 0, isOnline: false, spawnTime: 0, isAlive: false, deathTime: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<AppTeamInfo_Member>(this, message, value);
@@ -1864,8 +1864,8 @@ class AppTeamInfo_Member$Type extends MessageType<AppTeamInfo_Member> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* uint64 steamId */ 1:
-                    message.steamId = reader.uint64().toBigInt();
+                case /* uint64 steamId = 1 [jstype = JS_STRING];*/ 1:
+                    message.steamId = reader.uint64().toString();
                     break;
                 case /* string name */ 2:
                     message.name = reader.string();
@@ -1900,8 +1900,8 @@ class AppTeamInfo_Member$Type extends MessageType<AppTeamInfo_Member> {
         return message;
     }
     internalBinaryWrite(message: AppTeamInfo_Member, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* uint64 steamId = 1; */
-        if (message.steamId !== 0n)
+        /* uint64 steamId = 1 [jstype = JS_STRING]; */
+        if (message.steamId !== "0")
             writer.tag(1, WireType.Varint).uint64(message.steamId);
         /* string name = 2; */
         if (message.name !== "")
@@ -2046,7 +2046,7 @@ export const AppTeamChat = new AppTeamChat$Type();
 class AppChatMessage$Type extends MessageType<AppChatMessage> {
     constructor() {
         super("rustplus.AppChatMessage", [
-            { no: 1, name: "steamId", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 1, name: "steamId", kind: "scalar", T: 4 /*ScalarType.UINT64*/ },
             { no: 2, name: "name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "message", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "color", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
@@ -2054,7 +2054,7 @@ class AppChatMessage$Type extends MessageType<AppChatMessage> {
         ]);
     }
     create(value?: PartialMessage<AppChatMessage>): AppChatMessage {
-        const message = { steamId: 0n, name: "", message: "", color: "", time: 0 };
+        const message = { steamId: "0", name: "", message: "", color: "", time: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<AppChatMessage>(this, message, value);
@@ -2065,8 +2065,8 @@ class AppChatMessage$Type extends MessageType<AppChatMessage> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* uint64 steamId */ 1:
-                    message.steamId = reader.uint64().toBigInt();
+                case /* uint64 steamId = 1 [jstype = JS_STRING];*/ 1:
+                    message.steamId = reader.uint64().toString();
                     break;
                 case /* string name */ 2:
                     message.name = reader.string();
@@ -2092,8 +2092,8 @@ class AppChatMessage$Type extends MessageType<AppChatMessage> {
         return message;
     }
     internalBinaryWrite(message: AppChatMessage, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* uint64 steamId = 1; */
-        if (message.steamId !== 0n)
+        /* uint64 steamId = 1 [jstype = JS_STRING]; */
+        if (message.steamId !== "0")
             writer.tag(1, WireType.Varint).uint64(message.steamId);
         /* string name = 2; */
         if (message.name !== "")
@@ -2477,7 +2477,7 @@ class AppMarker$Type extends MessageType<AppMarker> {
             { no: 2, name: "type", kind: "enum", T: () => ["rustplus.AppMarkerType", AppMarkerType] },
             { no: 3, name: "x", kind: "scalar", T: 2 /*ScalarType.FLOAT*/ },
             { no: 4, name: "y", kind: "scalar", T: 2 /*ScalarType.FLOAT*/ },
-            { no: 5, name: "steamId", kind: "scalar", opt: true, T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 5, name: "steamId", kind: "scalar", opt: true, T: 4 /*ScalarType.UINT64*/ },
             { no: 6, name: "rotation", kind: "scalar", opt: true, T: 2 /*ScalarType.FLOAT*/ },
             { no: 7, name: "radius", kind: "scalar", opt: true, T: 2 /*ScalarType.FLOAT*/ },
             { no: 8, name: "color1", kind: "message", T: () => Vector4 },
@@ -2511,8 +2511,8 @@ class AppMarker$Type extends MessageType<AppMarker> {
                 case /* float y */ 4:
                     message.y = reader.float();
                     break;
-                case /* optional uint64 steamId */ 5:
-                    message.steamId = reader.uint64().toBigInt();
+                case /* optional uint64 steamId = 5 [jstype = JS_STRING];*/ 5:
+                    message.steamId = reader.uint64().toString();
                     break;
                 case /* optional float rotation */ 6:
                     message.rotation = reader.float();
@@ -2559,7 +2559,7 @@ class AppMarker$Type extends MessageType<AppMarker> {
         /* float y = 4; */
         if (message.y !== 0)
             writer.tag(4, WireType.Bit32).float(message.y);
-        /* optional uint64 steamId = 5; */
+        /* optional uint64 steamId = 5 [jstype = JS_STRING]; */
         if (message.steamId !== undefined)
             writer.tag(5, WireType.Varint).uint64(message.steamId);
         /* optional float rotation = 6; */
@@ -2740,12 +2740,12 @@ export const AppCameraFrame = new AppCameraFrame$Type();
 class AppTeamChanged$Type extends MessageType<AppTeamChanged> {
     constructor() {
         super("rustplus.AppTeamChanged", [
-            { no: 1, name: "playerId", kind: "scalar", T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 1, name: "playerId", kind: "scalar", T: 4 /*ScalarType.UINT64*/ },
             { no: 2, name: "teamInfo", kind: "message", T: () => AppTeamInfo }
         ]);
     }
     create(value?: PartialMessage<AppTeamChanged>): AppTeamChanged {
-        const message = { playerId: 0n };
+        const message = { playerId: "0" };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<AppTeamChanged>(this, message, value);
@@ -2756,8 +2756,8 @@ class AppTeamChanged$Type extends MessageType<AppTeamChanged> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* uint64 playerId */ 1:
-                    message.playerId = reader.uint64().toBigInt();
+                case /* uint64 playerId = 1 [jstype = JS_STRING];*/ 1:
+                    message.playerId = reader.uint64().toString();
                     break;
                 case /* rustplus.AppTeamInfo teamInfo */ 2:
                     message.teamInfo = AppTeamInfo.internalBinaryRead(reader, reader.uint32(), options, message.teamInfo);
@@ -2774,8 +2774,8 @@ class AppTeamChanged$Type extends MessageType<AppTeamChanged> {
         return message;
     }
     internalBinaryWrite(message: AppTeamChanged, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* uint64 playerId = 1; */
-        if (message.playerId !== 0n)
+        /* uint64 playerId = 1 [jstype = JS_STRING]; */
+        if (message.playerId !== "0")
             writer.tag(1, WireType.Varint).uint64(message.playerId);
         /* rustplus.AppTeamInfo teamInfo = 2; */
         if (message.teamInfo)
